@@ -9,10 +9,7 @@ function App() {
   return (
     <Router>
       <header>
-        <Link to="/">
-          <img src={pokemonLogo} alt="Pokemon Logo" />
-          Pokemon List
-        </Link>
+        <Link to="/">Pokemon List</Link>
       </header>
       <Routes>
         <Route path="/" element={<CardList />} />
