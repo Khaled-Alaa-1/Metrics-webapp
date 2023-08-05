@@ -18,19 +18,7 @@ const CardList = () => {
 
   useEffect(() => {
     dispatch(fetchCards());
-  }, [dispatch]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return (
-      <div>
-        Error:
-        {' '}
-        {error}
-      </div>
+	@@ -31,16 +34,31 @@ const CardList = () => {
     );
   }
 
@@ -62,5 +50,4 @@ const CardList = () => {
     </div>
   );
 };
-
-export default CardList;
+	
