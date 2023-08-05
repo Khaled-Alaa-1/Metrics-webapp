@@ -1,43 +1,29 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-} from 'react-router-dom';
-import StockList from './component/stocklist';
-import StockDetails from './component/stockDetails';
+import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getAllCountries } from './redux/covid/covid';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Details from './components/Details/Details';
+
 import './App.css';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllCountries());
+  }, [dispatch]);
+
   return (
-    <Router>
-      <div className="app">
-        <nav>
-          <ul className="header-ul">
-            <li>
-              <h1 className="headerName">StockStore</h1>
-            </li>
-            <li>
-              <Link to="/">STOCKS</Link>
-            </li>
-            <li>
-              <Link to="/details">details</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route
-            path="/"
-            element={(
-              <div>
-                <StockList />
-              </div>
-          )}
-          />
-          <Route path="/details" element={<StockDetails />} />
-        </Routes>
-      </div>
-    </Router>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:country_name" element={<Details />} />
+      </Routes>
+    </>
   );
 }
+
+export default App;
