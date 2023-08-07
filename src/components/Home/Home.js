@@ -65,7 +65,7 @@ const Home = () => {
             {displayedCountries.map((country) => (
               <li
                 data-testid="listitem"
-                key={country.continent}
+                key={country.continent} // Add a unique key prop here
                 className={`${styles.navlinks} py-3 px-2 bg-sky-700`}
               >
                 <NavLink
@@ -77,11 +77,14 @@ const Home = () => {
                   <GrMapLocation className="text-8xl text-center" />
                   <div className="ml-auto text-white flex flex-col justify-end text-3xl font-bold items-end grow">
                     <span className="flex flex-col items-end">
-                      {country.continent.split(' ').map((piece) => (
+                      {country && country.continent && country.continent.split(' ').map((piece) => (
                         <span key={piece}>{piece.split('-')[0]}</span>
                       ))}
                     </span>
-                    <span>{country.cases.toLocaleString('en-US')}</span>
+                    <span>
+                      {country && country.cases && country.cases.toLocaleString('en-US')}
+                    </span>
+
                   </div>
                 </NavLink>
               </li>
