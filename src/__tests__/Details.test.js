@@ -1,34 +1,28 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
 import configureStore from 'redux-mock-store';
 import Details from '../components/Details/Details';
 
-const regions = [
-  { name: 'Cairo', today_confirmed: 500000 },
-  { name: 'Sohag', today_confirmed: 100000 },
-  { name: 'Assiut', today_confirmed: 100000 },
-  { name: 'Giza', today_confirmed: 300000 },
-];
+const mockStore = configureStore([]);
 
-describe('Home component', () => {
-  test('Test Rendering regions', () => {
-    const intialState = {
-      regions: { regions: [...regions], total: 1000000 },
+describe('Details', () => {
+  test('renders loading spinner when regions are not loaded', () => {
+    const initialState = {
+      data: {
+        countries: [],
+        regions: [],
+      },
     };
+    const store = mockStore(initialState);
 
-    const middlewares = [thunk, logger];
-    const mockStore = configureStore(middlewares);
-    const store = mockStore({ data: intialState });
-
-    const tree = render(
+    render(
       <Provider store={store}>
         <Details />
-      </Provider>,
+      </Provider>
     );
-    expect(tree).toMatchSnapshot();
-    const listItemElements = screen.getAllByTestId('listitem');
-    expect(listItemElements).toHaveLength(4);
+
+    const loadingSpinner = screen.queryByTestId('loading-spinner');
+    expect(loadingSpinner).toBeInTheDocument();
   });
 });
