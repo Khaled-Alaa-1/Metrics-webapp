@@ -19,7 +19,7 @@ describe('Details', () => {
     render(
       <Provider store={store}>
         <Details />
-      </Provider>
+      </Provider>,
     );
 
     const loadingSpinner = screen.queryByTestId('loading-spinner');
