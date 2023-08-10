@@ -40,15 +40,21 @@ After you're finished please remove all the comments and instructions!
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
+# Covid Tracker
+
+This is a capstone solo project in react module. It's got covid cases from all
+over the world. The project was built with react, redux, and fetch API.
 
 
-## 🛠 Built With <a name="built-with">
 
+## Built With
+- HTML
+- CSS
+- Javascript
+- Webpacks
 - React
-- redux
-- router
-
-</a>
+- Redux
+- API
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -119,7 +125,7 @@ Clone this repository to your desired folder:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://math-magicians-1-pm4v.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
