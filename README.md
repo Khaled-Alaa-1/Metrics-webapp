@@ -127,6 +127,8 @@ Clone this repository to your desired folder:
 
 - [Live Demo Link](https://math-magicians-1-pm4v.onrender.com)
 
+- [Video Link](https://www.loom.com/share/68dc2f033dae465f91c6eeb80ce3c133)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
