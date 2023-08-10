@@ -1,0 +1,27 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: GillSans;
+  src: url(assests/fonts/GillSans.otf);
+}
+
+body {
+  margin: 0;
+  background-color: #0ea5e9;
+  font-family: GillSans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
