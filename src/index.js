@@ -6,7 +6,10 @@ import store from './redux/configreStore';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+// Use createRoot() instead of ReactDOM.render()
+const root = ReactDOM.createRoot(rootElement);
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
@@ -14,5 +17,4 @@ ReactDOM.render(
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root'),
 );
